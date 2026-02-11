@@ -1,5 +1,5 @@
 export const callOnload = async (lat, lng) => {
-    var token = localStorage.getItem("token");
+    var token = sessionStorage.getItem("token");
     try {
         const response = await fetch(`http://localhost:8080/api/v1/restaurants?lat=${lat}&lng=${lng}`, {
             method: "GET",

@@ -14,11 +14,11 @@ function Login() {
             const result = await LoginUser(email, password);
 
             // store token / username
-            localStorage.setItem("token", result.token);
-            localStorage.setItem("username", result.username);
+            sessionStorage.setItem("token", result.token);
+            sessionStorage.setItem("username", result.username);
 
             // redirect on success
-            navigate("/");
+            navigate("/khaaonow");
         } catch (err) {
             alert("Login failed. Check credentials.");
         }
@@ -27,7 +27,7 @@ function Login() {
     return (
         <div>
             <form onSubmit={handleLogin}>
-                <label>Enter your email:</label>
+                <label>Enter your email: </label>
                 <input
                     type="text"
                     value={email}
@@ -35,15 +35,15 @@ function Login() {
                 />
                 <br /><br />
 
-                <label>Enter your password:</label>
+                <label>Enter your password: </label>
                 <input
                     type="password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                 />
                 <br /><br />
-
-                <button type="submit">Login</button>
+                <button type="submit">Login</button><br/>
+                <a href="/email-verify">Create Account</a>
             </form>
         </div>
     );

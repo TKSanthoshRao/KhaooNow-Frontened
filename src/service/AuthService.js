@@ -1,7 +1,5 @@
-import { Navigate } from "react-router-dom";
-
 export const signUp = async (name, email, password) => {
-    console.log("entered signup method");
+    console.log(name + " " + email + " " + password);
 
     try {
         const response = await fetch("http://localhost:8080/api/v1/auth/register", {
@@ -62,3 +60,54 @@ export const LoginUser = async (email, password) => {
     }
 };
 
+export const EmailOTP = async (email) => {
+    try {
+        const response = await fetch(`http://localhost:8080/api/v1/auth/email-verification/token`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                email: email
+            })
+        });
+
+        if (!response.ok) {
+            const errorText = await response.text();
+            throw new Error(errorText || "Login failed");
+        }
+        var data = await response.json();
+        return data;
+
+    } catch (err) {
+        console.error("response error:", err);
+        throw err;
+    }
+};
+
+
+export const verifyEmailOtp = async (email,otp) => {
+    try {
+        const response = await fetch(`http://localhost:8080/api/v1/auth/email-verification/verify`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                email: email,
+                token:otp
+            })
+        });
+
+        if (!response.ok) {
+            const errorText = await response.text();
+            throw new Error(errorText || "OTP verification failed");
+        }
+        var data = await response.json();
+        return data;
+
+    } catch (err) {
+        console.error("response error:", err);
+        throw err;
+    }
+};
