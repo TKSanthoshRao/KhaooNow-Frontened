@@ -2,7 +2,7 @@ export const signUp = async (name, email, password) => {
     console.log(name + " " + email + " " + password);
 
     try {
-        const response = await fetch("http://localhost:8080/api/v1/auth/register", {
+        const response = await fetch("https://unapproaching-chylaceous-spring.ngrok-free.dev/api/v1/auth/register", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -30,7 +30,7 @@ export const signUp = async (name, email, password) => {
 
 export const LoginUser = async (email, password) => {
     try {
-        const response = await fetch("http://localhost:8080/api/v1/auth/login", {
+        const response = await fetch("https://unapproaching-chylaceous-spring.ngrok-free.dev/api/v1/auth/login", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -62,7 +62,7 @@ export const LoginUser = async (email, password) => {
 
 export const EmailOTP = async (email) => {
     try {
-        const response = await fetch(`http://localhost:8080/api/v1/auth/email-verification/token`, {
+        const response = await fetch(`https://unapproaching-chylaceous-spring.ngrok-free.dev/api/v1/auth/email-verification/token`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -85,10 +85,12 @@ export const EmailOTP = async (email) => {
     }
 };
 
+// https://unapproaching-chylaceous-spring.ngrok-free.dev
+// http://localhost:8080
 
 export const verifyEmailOtp = async (email,otp) => {
     try {
-        const response = await fetch(`http://localhost:8080/api/v1/auth/email-verification/verify`, {
+        const response = await fetch(`https://unapproaching-chylaceous-spring.ngrok-free.dev/api/v1/auth/email-verification/verify`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
