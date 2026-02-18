@@ -1,6 +1,4 @@
 export const signUp = async (name, email, password) => {
-    console.log(name + " " + email + " " + password);
-
     try {
         const response = await fetch("https://unapproaching-chylaceous-spring.ngrok-free.dev/api/v1/auth/register", {
             method: "POST",
@@ -46,9 +44,8 @@ export const LoginUser = async (email, password) => {
             throw new Error(errorText || "Login failed");
         }
 
-        const data = await response.json(); // ✅ parse JSON
+        const data = await response.json();
 
-        // assuming backend returns { token, username }
         return {
             token: data.token,
             username: data.username
