@@ -1,4 +1,4 @@
-var link = "https://fsqk3s-ip-38-183-54-167.tunnelmole.net";
+var link = "https://ca9ii6-ip-47-15-159-177.tunnelmole.net";
 export const signUp = async (name, email, password) => {
     try {
         const response = await fetch(link+"/api/v1/auth/register", {

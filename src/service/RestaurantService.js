@@ -1,4 +1,4 @@
-var link = "https://fsqk3s-ip-38-183-54-167.tunnelmole.net";
+var link = "https://ca9ii6-ip-47-15-159-177.tunnelmole.net";
 export const callOnload = async (lat, lng) => {
     var token = sessionStorage.getItem("token");
     try {
