@@ -13,11 +13,9 @@ function Login() {
         try {
             const result = await LoginUser(email, password);
 
-            // store token / username
             sessionStorage.setItem("token", result.token);
-            sessionStorage.setItem("username", result.username);
+            sessionStorage.setItem("userName", result.userName);
 
-            // redirect on success
             navigate("/khaaonow");
         } catch (err) {
             alert("Login failed. Check credentials.");

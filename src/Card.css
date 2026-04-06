@@ -1,0 +1,21 @@
+.restaurants-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.restaurant{
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 18px;
+    background-color: #f8fafc;   /* light card background */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    color: #1f2937; /* dark text */
+}
+
+.restaurant:hover{
+    transform: translateY(-5px);
+    transition: 0.25s ease;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}

@@ -7,7 +7,7 @@ function SignUp() {
     const handleSignUp = async (e) =>{
         e.preventDefault();
         var data =await signUp(name,userEmail,userPassword);
-        alert(JSON.stringify(data));
+         alert(JSON.stringify(data));
     } 
     return (
         <div>

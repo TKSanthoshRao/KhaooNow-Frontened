@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 function Logout() {
     sessionStorage.removeItem("token");
+    sessionStorage.removeItem("userName");
     const navigate = useNavigate();
     const [count, setCount] = useState(3);
 

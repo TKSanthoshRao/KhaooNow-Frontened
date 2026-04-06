@@ -12,12 +12,12 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<HomePageBeforeLogin/>}/>
+        <Route path='/' element={<HomePageBeforeLogin />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
-        <Route path="/email-verify" element={< OTP/>} />
+        <Route path="/email-verify" element={< OTP />} />
         <Route path="/khaaonow" element={<ProtectedRoute><HomePage /></ProtectedRoute>} />
-        <Route path="/logout" element={<Logout/>}></Route>
+        <Route path="/logout" element={<Logout />}></Route>
       </Routes>
     </BrowserRouter>
   );

@@ -46,10 +46,9 @@ export const LoginUser = async (email, password) => {
         }
 
         const data = await response.json();
-
         return {
             token: data.token,
-            username: data.username
+            userName: data.userName
         };
 
     } catch (err) {
