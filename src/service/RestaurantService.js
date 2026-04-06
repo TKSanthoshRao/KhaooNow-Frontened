@@ -13,7 +13,6 @@ export const callOnload = async (lat, lng) => {
             const errorText = await response.text();
             throw new Error(errorText || "Restaurant failed");
         }
-
         const data = await response.json();
         return data;
 

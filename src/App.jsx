@@ -6,6 +6,7 @@ import HomePage from './HomePage';
 import ProductTabs from './ProductTabs';
 import ProtectedRoute from "./ProtectedRoute"
 import HomePageBeforeLogin from './HomePageBeforeLogin';
+import Logout from './Logout';
 import OTP from './OTP';
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/email-verify" element={< OTP/>} />
         <Route path="/khaaonow" element={<ProtectedRoute><HomePage /></ProtectedRoute>} />
+        <Route path="/logout" element={<Logout/>}></Route>
       </Routes>
     </BrowserRouter>
   );

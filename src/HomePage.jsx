@@ -22,10 +22,10 @@ function HomePage() {
 
         const fetchData = async () => {
             try {
-                const { lat, lng } = await getLocation(); // ✅ waits here
+                const { lat, lng } = await getLocation();
                 console.log(lat, lng);
 
-                const response = await callOnload(lat, lng); // ✅ valid values
+                const response = await callOnload(lat, lng);
                 setArr(response);
             } catch (error) {
                 console.error("Error:", error);
