@@ -1,7 +1,8 @@
+var link = "https://fsqk3s-ip-38-183-54-167.tunnelmole.net";
 export const callOnload = async (lat, lng) => {
     var token = sessionStorage.getItem("token");
     try {
-        const response = await fetch(`https://x0hdtl-ip-38-183-54-167.tunnelmole.net/api/v1/restaurants?lat=${lat}&lng=${lng}`, {
+        const response = await fetch(link+`/api/v1/restaurants?lat=${lat}&lng=${lng}`, {
             method: "GET",
             headers: {
             "Content-Type": "application/json",

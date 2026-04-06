@@ -1,6 +1,7 @@
+var link = "https://fsqk3s-ip-38-183-54-167.tunnelmole.net";
 export const signUp = async (name, email, password) => {
     try {
-        const response = await fetch("https://x0hdtl-ip-38-183-54-167.tunnelmole.net/api/v1/auth/register", {
+        const response = await fetch(link+"/api/v1/auth/register", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -28,7 +29,7 @@ export const signUp = async (name, email, password) => {
 
 export const LoginUser = async (email, password) => {
     try {
-        const response = await fetch("https://x0hdtl-ip-38-183-54-167.tunnelmole.net/api/v1/auth/login", {
+        const response = await fetch(link+"/api/v1/auth/login", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -59,7 +60,7 @@ export const LoginUser = async (email, password) => {
 
 export const EmailOTP = async (email) => {
     try {
-        const response = await fetch(`https://x0hdtl-ip-38-183-54-167.tunnelmole.net/api/v1/auth/email-verification/token`, {
+        const response = await fetch(link+`/api/v1/auth/email-verification/token`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -87,7 +88,7 @@ export const EmailOTP = async (email) => {
 
 export const verifyEmailOtp = async (email,otp) => {
     try {
-        const response = await fetch(`https://x0hdtl-ip-38-183-54-167.tunnelmole.net/api/v1/auth/email-verification/verify`, {
+        const response = await fetch(link+`/api/v1/auth/email-verification/verify`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
