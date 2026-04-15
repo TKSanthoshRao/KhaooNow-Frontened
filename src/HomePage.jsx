@@ -1,6 +1,6 @@
 import RestaurantContainer from "./RestaurantContainer";
 import ProfileMenu from "./ProfileMenu";
-import "./Homepage.css";
+import "./HomePage.css";
 import {loggedInUser} from "./service/AuthService"
 import { useEffect,useState } from "react";
 
