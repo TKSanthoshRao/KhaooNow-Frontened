@@ -1,4 +1,4 @@
-var link = "https://KhaaoNow-env.eba-7mvd9uhh.us-east-1.elasticbeanstalk.com";
+var link = "http://KhaaoNow-env.eba-7mvd9uhh.us-east-1.elasticbeanstalk.com";
 export const signUp = async (name, email, password) => {
     try {
         const response = await fetch(link+"/api/v1/auth/register", {
