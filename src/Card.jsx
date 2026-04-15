@@ -1,11 +1,15 @@
 import "./Card.css";
+import { useNavigate } from "react-router-dom";
 export default function Card({ data }) {
-    return <div className="restaurant">
-        <h3>Restaurant name : {data.name}</h3>
-        <p>city is : {data.city}</p>
-        <p>street is : {data.street}</p>
-        <p>state is : {data.state}</p>
-        <p>Distance is : {data.distance} KM</p>
-        <h3>Status : {String(data.open)}</h3>
+    var navigate = useNavigate();
+        const goToMenu = () => {
+        navigate(`/restaurant/${data.id}/menu`);
+    }
+    return <div className="restaurant" onClick={goToMenu}>
+        <img className="restaurant-image" src = {data.RestaurantImage}></img>
+        <h3>{data.name}</h3>
+        <p> {data.street} , {data.city}, {data.state}</p>
+        <p>{data.distance} KM away from you</p>
+        <h3>Status : {String(data.open) === "true"?"Open right now":"Unavailable"}</h3>
     </div>
 }

@@ -1,0 +1,16 @@
+.login-container-mint {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #00C896, #A7F3D0);
+  font-family: Arial, sans-serif;
+}
+
+.login-container-mint .login-box button {
+  background: #00C896;
+}
+
+.login-container-mint .login-box button:hover {
+  background: #00a67c;
+}

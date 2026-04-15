@@ -2,9 +2,12 @@ import { useEffect, useState } from "react";
 import Card from "./Card";
 import { callOnload } from "./service/RestaurantService";
 import "./Card.css";
+import { useNavigate } from "react-router-dom";
 
 function RestaurantContainer() {
     const [arr, setArr] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const getLocation = () => {
@@ -29,12 +32,27 @@ function RestaurantContainer() {
                 const response = await callOnload(lat, lng);
                 setArr(response);
             } catch (error) {
-                console.error("Error:", error);
+                console.log(error);
+                        if (error.message === "401") {
+                        sessionStorage.clear();
+                        navigate("/login");
+                    }
+            }finally {
+                setLoading(false);
             }
         };
 
         fetchData();
     }, []);
+
+        if (loading) {
+        return (
+            <div className="loading-container">
+                <div className="spinner"></div>
+                <p>Loading restaurants...</p>
+            </div>
+        );
+    }
 
     return (
         <div className="restaurants-container">

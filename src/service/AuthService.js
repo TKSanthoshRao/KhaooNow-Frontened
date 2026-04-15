@@ -1,4 +1,4 @@
-var link = "https://q1baf7-ip-38-183-54-167.tunnelmole.net";
+var link = "http://KhaaoNow-env.eba-7mvd9uhh.us-east-1.elasticbeanstalk.com";
 export const signUp = async (name, email, password) => {
     try {
         const response = await fetch(link+"/api/v1/auth/register", {
@@ -104,6 +104,36 @@ export const verifyEmailOtp = async (email,otp) => {
         }
         var data = await response.json();
         return data;
+
+    } catch (err) {
+        console.error("response error:", err);
+        throw err;
+    }
+};
+
+
+export const loggedInUser = async () => {
+    try {
+        const token = sessionStorage.getItem("token");
+
+        if (!token) {
+            throw new Error("No token found");
+        }
+
+        const response = await fetch(`${link}/api/v1/auth/loggedin/user`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${token}`
+            }
+        });
+
+        if (!response.ok) {
+            const errorText = await response.text();
+            throw new Error(errorText || `HTTP error: ${response.status}`);
+        }
+
+        return await response.json();
 
     } catch (err) {
         console.error("response error:", err);

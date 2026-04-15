@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { LoginUser } from "./service/AuthService";
+import "./Login.css"
 
 function Login() {
     const [email, setEmail] = useState("");
@@ -14,7 +15,6 @@ function Login() {
             const result = await LoginUser(email, password);
 
             sessionStorage.setItem("token", result.token);
-            sessionStorage.setItem("userName", result.userName);
 
             navigate("/khaaonow");
         } catch (err) {
@@ -23,8 +23,8 @@ function Login() {
     };
 
     return (
-        <div>
-            <form onSubmit={handleLogin}>
+    <div className="login-container-mint">
+         <form className="login-box" onSubmit={handleLogin}>
                 <label>Enter your email: </label>
                 <input
                     type="text"

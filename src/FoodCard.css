@@ -1,0 +1,57 @@
+.restaurant-food-item {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 16px;
+    margin: 12px;
+    width: 220px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    font-family: Arial, sans-serif;
+    border-left: 5px solid #ff6b35;
+}
+
+.restaurant-food-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.restaurant-food-item h3 {
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.restaurant-food-item p {
+    margin: 4px 0;
+    font-size: 14px;
+    color: #666;
+}
+
+/* Food type styling */
+.restaurant-food-item p:nth-child(3) {
+    font-weight: bold;
+    color: #ff6b35;
+}
+
+/* Optional container grid support */
+.food-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: flex-start;
+    padding: 10px;
+}
+.food-image {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+/* Slight zoom effect on card hover */
+.restaurant-food-item:hover .food-image {
+    transform: scale(1.05);
+}
