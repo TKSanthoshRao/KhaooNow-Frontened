@@ -1,4 +1,4 @@
-var link = "http://KhaaoNow-env.eba-7mvd9uhh.us-east-1.elasticbeanstalk.com/api/v1/cart-item"
+var link = "https://KhaaoNow-env.eba-7mvd9uhh.us-east-1.elasticbeanstalk.com/api/v1/cart-item"
 export const addCartItemToCart = async (foodItem,quantity) => {
     var token = sessionStorage.getItem("token");
     try{

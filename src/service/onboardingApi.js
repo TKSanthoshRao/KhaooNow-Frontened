@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = "http://KhaaoNow-env.eba-7mvd9uhh.us-east-1.elasticbeanstalk.com/api/v1/admin/restaurant/onboard";
+const BASE_URL = "https://KhaaoNow-env.eba-7mvd9uhh.us-east-1.elasticbeanstalk.com/api/v1/admin/restaurant/onboard";
 
 export const getAllRequests = async (status) => {
   const response = await axios.get(BASE_URL+"/requests", {

@@ -1,4 +1,4 @@
-var link = "http://KhaaoNow-env.eba-7mvd9uhh.us-east-1.elasticbeanstalk.com";
+var link = "https://KhaaoNow-env.eba-7mvd9uhh.us-east-1.elasticbeanstalk.com";
 export const callOnload = async (lat, lng) => {
     var token = sessionStorage.getItem("token");
     try {
