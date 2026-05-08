@@ -1,4 +1,4 @@
-var link = "https://3nh8dw-ip-114-134-27-142.tunnelmole.net"
+var link = "https://3nh8dw-ip-114-134-27-142.tunnelmole.net/api/v1/cart/items"
 export const addCartItemToCart = async (foodItem, quantity,forceFlag) => {
     var token = sessionStorage.getItem("token");
     try {
