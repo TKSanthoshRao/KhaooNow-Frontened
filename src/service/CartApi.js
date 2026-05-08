@@ -1,5 +1,5 @@
 // http://KhaaoNow-env.eba-7mvd9uhh.us-east-1.elasticbeanstalk.com
-var link = "https://3nh8dw-ip-114-134-27-142.tunnelmole.net"
+var link = "https://3nh8dw-ip-114-134-27-142.tunnelmole.net/api/v1/cart"
 export const cartDetails = async () => {
     var token = sessionStorage.getItem("token");
     try{

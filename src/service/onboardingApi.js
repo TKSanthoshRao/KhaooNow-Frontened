@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = "https://3nh8dw-ip-114-134-27-142.tunnelmole.net";
+const BASE_URL = "https://3nh8dw-ip-114-134-27-142.tunnelmole.net/api/v1/admin/restaurant/onboard";
 
 export const getAllRequests = async (status) => {
   const response = await axios.get(BASE_URL + "/requests", {
