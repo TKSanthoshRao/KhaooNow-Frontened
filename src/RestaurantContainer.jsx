@@ -4,7 +4,7 @@ import { callOnload } from "./service/RestaurantService";
 import "./Card.css";
 import { useNavigate } from "react-router-dom";
 
-function RestaurantContainer() {
+function RestaurantContainer(refreshCart={fetchCart} ) {
     const [arr, setArr] = useState([]);
     const [loading, setLoading] = useState(true);
     const navigate = useNavigate();

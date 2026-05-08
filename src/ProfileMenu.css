@@ -105,11 +105,3 @@
     transform: translateY(0);
   }
 }
-
-.profile-menu {
-  position:absolute;
-  top: 20px;
-  right: 20px;
-  display: inline-block;
-  z-index: 10000;
-}

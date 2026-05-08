@@ -28,7 +28,7 @@ import "./RestaurantMenu.css"
         return (
             <div className="loading-container">
                 <div className="spinner"></div>
-                <p>Loading restaurants...</p>
+                <p>Loading Menu...</p>
             </div>
         );
     }

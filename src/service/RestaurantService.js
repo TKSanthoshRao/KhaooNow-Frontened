@@ -1,4 +1,4 @@
-var link = "http://KhaaoNow-env.eba-7mvd9uhh.us-east-1.elasticbeanstalk.com";
+var link = "https://3nh8dw-ip-114-134-27-142.tunnelmole.net";
 export const callOnload = async (lat, lng) => {
     var token = sessionStorage.getItem("token");
     try {

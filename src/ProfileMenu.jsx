@@ -2,15 +2,19 @@ import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import "./ProfileMenu.css";
 
+import {useAuth} from "./context/AuthContext"
+
 export default function ProfileMenu({ LoggedInuser }) {
   const [open, setOpen] = useState(false);
   const dropdownRef = useRef(null);
   const navigate = useNavigate();
 
+  const { authUser } = useAuth();
+
   const user = {
-    name: LoggedInuser?.fullName || "Guest",
-    email: LoggedInuser?.email || "guest@dummy.com",
-    profilePic: LoggedInuser?.imageUrl || "https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg"
+    name: authUser?.fullName || "Guest",
+    email: authUser?.email || "guest@dummy.com",
+    profilePic: authUser?.imageUrl || "https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg"
 
   };
 
@@ -28,7 +32,7 @@ export default function ProfileMenu({ LoggedInuser }) {
 
   const handleLogout = () => {
     sessionStorage.removeItem("token"); // important
-    navigate("/login");
+    navigate("/logout");
   };
 
   return (

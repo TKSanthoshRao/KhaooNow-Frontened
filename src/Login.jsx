@@ -1,12 +1,16 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { LoginUser } from "./service/AuthService";
+import { useAuth } from "./context/AuthContext";
+import { useCart } from "./context/CartContext";
 import "./Login.css"
 
 function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const navigate = useNavigate();
+    const { initializeUser } = useAuth();
+    const { fetchCart } = useCart();
 
     const handleLogin = async (e) => {
         e.preventDefault(); // prevent page reload
@@ -15,6 +19,8 @@ function Login() {
             const result = await LoginUser(email, password);
 
             sessionStorage.setItem("token", result.token);
+            await initializeUser();
+            await fetchCart();
 
             navigate("/khaaonow");
         } catch (err) {

@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "./context/AuthContext";
 
 function Logout() {
+    const { clearAuthUser } = useAuth();
     sessionStorage.removeItem("token");
     sessionStorage.removeItem("userName");
+    clearAuthUser();
     const navigate = useNavigate();
     const [count, setCount] = useState(3);
 

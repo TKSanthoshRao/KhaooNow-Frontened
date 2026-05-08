@@ -1,4 +1,4 @@
-var link = "http://khaaonow-env.eba-7mvd9uhh.us-east-1.elasticbeanstalk.com";
+var link = "https://3nh8dw-ip-114-134-27-142.tunnelmole.net";
 export const signUp = async (name, email, password) => {
     try {
         const response = await fetch(link + "/api/v1/auth/register", {
