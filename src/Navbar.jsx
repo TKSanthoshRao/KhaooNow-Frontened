@@ -1,5 +1,5 @@
 import ProfileMenu from "./ProfileMenu";
-import "./navbar.css";
+import "./Navbar.css";
 import { useCart } from "./context/CartContext";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
